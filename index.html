@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aini Radhiah | Portfolio</title>
-  <!-- Simpler fonts: clean sans-serif, with a touch of style -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Aini Radhiah | Portfolio </title>
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
-    /* ---------- SIMPLE BLUE + YELLOW COMBO ---------- */
     * {
       margin: 0;
       padding: 0;
@@ -16,12 +17,11 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f0f4fa;  /* soft light blue background (clean) */
+      background: #f0f4fa;
       color: #0b2b44;
       line-height: 1.5;
     }
 
-    /* color palette: deep blue, bright yellow accent, light blue sky */
     :root {
       --deep-blue: #0f2f4f;
       --mid-blue: #2c5a7a;
@@ -38,7 +38,6 @@
       padding: 0 24px;
     }
 
-    /* ---- navigation (simple, not glassmorphic) ---- */
     nav {
       background: var(--deep-blue);
       padding: 16px 24px;
@@ -74,13 +73,9 @@
       font-weight: 500;
       font-size: 0.95rem;
       transition: color 0.2s;
-      padding-bottom: 4px;
     }
-    .nav-links a:hover {
-      color: var(--yellow);
-    }
+    .nav-links a:hover { color: var(--yellow); }
 
-    /* sections basic spacing */
     section {
       padding: 60px 0;
       border-bottom: 1px solid rgba(44, 90, 122, 0.1);
@@ -107,10 +102,7 @@
       font-weight: 500;
       color: var(--deep-blue);
     }
-    h2 span {
-      color: var(--yellow-dark);
-      font-style: italic;
-    }
+    h2 span { color: var(--yellow-dark); font-style: italic; }
     .simple-divider {
       width: 70px;
       height: 3px;
@@ -119,7 +111,6 @@
       border-radius: 3px;
     }
 
-    /* HERO section - simpler and friendlier */
     .hero {
       background: linear-gradient(135deg, #e3effa 0%, #ffffff 100%);
       padding: 60px 0 50px;
@@ -131,10 +122,7 @@
       gap: 40px;
       justify-content: space-between;
     }
-    .hero-text {
-      flex: 1;
-      min-width: 260px;
-    }
+    .hero-text { flex: 1; min-width: 260px; }
     .hero-badge {
       background: var(--yellow);
       color: var(--deep-blue);
@@ -143,7 +131,6 @@
       border-radius: 40px;
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 1px;
       margin-bottom: 20px;
     }
     .hero-text h1 {
@@ -153,21 +140,14 @@
       color: var(--deep-blue);
       margin-bottom: 16px;
     }
-    .hero-text h1 span {
-      color: var(--yellow-dark);
-    }
+    .hero-text h1 span { color: var(--yellow-dark); }
     .hero-desc {
       font-size: 1rem;
       color: var(--gray);
       max-width: 480px;
       margin-bottom: 28px;
-      line-height: 1.6;
     }
-    .btn-group {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+    .btn-group { display: flex; gap: 16px; flex-wrap: wrap; }
     .btn-primary {
       background: var(--yellow);
       color: var(--deep-blue);
@@ -175,13 +155,9 @@
       border-radius: 40px;
       font-weight: 600;
       text-decoration: none;
-      display: inline-block;
       transition: background 0.2s;
-      border: none;
     }
-    .btn-primary:hover {
-      background: var(--yellow-dark);
-    }
+    .btn-primary:hover { background: var(--yellow-dark); }
     .btn-outline {
       background: transparent;
       border: 2px solid var(--mid-blue);
@@ -192,11 +168,7 @@
       text-decoration: none;
       transition: 0.2s;
     }
-    .btn-outline:hover {
-      background: var(--mid-blue);
-      color: white;
-      border-color: var(--mid-blue);
-    }
+    .btn-outline:hover { background: var(--mid-blue); color: white; }
     .hero-photo {
       flex: 0 0 260px;
       background: var(--white);
@@ -210,48 +182,12 @@
       background: #dfeef7;
       border-radius: 20px;
       padding: 36px 12px;
-      text-align: center;
     }
-    .photo-placeholder .icon {
-      font-size: 3.2rem;
-    }
-    .photo-placeholder p {
-      font-size: 0.75rem;
-      color: var(--mid-blue);
-      margin-top: 10px;
-    }
-    .hero-stats {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      background: rgba(15, 47, 79, 0.05);
-      border-radius: 60px;
-      padding: 8px 16px;
-    }
-    .hero-stats span {
-      color: var(--deep-blue);
-      font-weight: 700;
-    }
+    .photo-placeholder .icon { font-size: 3.2rem; }
 
-    /* about */
-    .about-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-    }
-    .about-text {
-      flex: 2;
-    }
-    .about-text p {
-      margin-bottom: 16px;
-      color: #1e3a5f;
-      font-size: 0.98rem;
-      line-height: 1.7;
-    }
+    .about-flex { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+    .about-text { flex: 2; }
+    .about-text p { margin-bottom: 16px; color: #1e3a5f; line-height: 1.7; }
     .stats-grid {
       flex: 1;
       display: grid;
@@ -263,24 +199,11 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.03);
       border: 1px solid #dceaf3;
     }
-    .stat-item {
-      text-align: center;
-      padding: 12px 6px;
-    }
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--yellow-dark);
-      display: block;
-      line-height: 1.1;
-    }
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--gray);
-      font-weight: 500;
-    }
+    .stat-item { text-align: center; padding: 12px 6px; }
+    .stat-number { font-size: 2rem; font-weight: 700; color: var(--yellow-dark); display: block; }
+    .stat-label { font-size: 0.8rem; color: var(--gray); font-weight: 500; }
 
-    /* projects - clean cards */
+    /* PROJECT GRID */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -289,17 +212,104 @@
     .project-card {
       background: var(--white);
       border-radius: 20px;
-      padding: 24px;
+      padding: 0;
       transition: 0.2s ease;
       box-shadow: 0 5px 12px rgba(0,0,0,0.03);
       border: 1px solid #e2ecf5;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
     .project-card:hover {
       transform: translateY(-4px);
       border-color: var(--yellow);
       box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+    }
+
+    /* KEY FIX: Smart image fitting - works for both portrait & landscape */
+    .card-gallery {
+      width: 100%;
+      height: 200px;  /* Fixed height container */
+      background: #f5f7fa;
+      position: relative;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      background: #f5f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* This makes images fit perfectly regardless of orientation */
+    .swiper-slide img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;  /* Shows full image without cropping */
+      display: block;
+      margin: 0 auto;
+    }
+    /* Alternative: If you prefer fill/crop (uncomment to use instead) */
+    /* .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    } */
+
+    .gallery-nav {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      display: flex;
+      gap: 6px;
+      z-index: 5;
+      background: rgba(15, 47, 79, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 4px 8px;
+      border-radius: 40px;
+    }
+    .nav-btn {
+      background: rgba(255,255,240,0.9);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      color: var(--deep-blue);
+      transition: 0.2s;
+      user-select: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .nav-btn:hover {
+      background: var(--yellow);
+      color: #0f2f4f;
+    }
+    .swiper-pagination-fraction-custom {
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      padding: 2px 8px;
+      border-radius: 30px;
+      color: white;
+      font-family: monospace;
+    }
+    .project-content {
+      padding: 20px 20px 24px;
     }
     .project-tag {
       background: #fef2dd;
@@ -308,7 +318,7 @@
       padding: 4px 10px;
       border-radius: 40px;
       display: inline-block;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       font-weight: 600;
       width: fit-content;
     }
@@ -329,13 +339,12 @@
       color: #4f6f8a;
       margin-bottom: 18px;
       line-height: 1.55;
-      flex: 1;
     }
     .tech-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 6px;
+      margin-bottom: 16px;
     }
     .tech {
       background: #eef2f7;
@@ -345,36 +354,11 @@
       color: var(--mid-blue);
       font-weight: 500;
     }
-    /* image placeholder styling */
-    .project-image-placeholder {
-      width: 100%;
-      height: 180px;
-      background: #eef3fc;
-      border-radius: 16px;
-      margin-bottom: 18px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #d4e2f0;
-    }
-    .project-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    /* fallback if image missing */
-    .project-image-placeholder:has(img[src*="placeholder"]) {
-      background: #e3effa;
-    }
-
-    /* button row styling */
     .project-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 20px;
+      margin-top: 8px;
     }
     .project-btn {
       display: inline-flex;
@@ -390,39 +374,13 @@
       transition: all 0.2s ease;
       border: 1px solid #cde0ed;
     }
-    .project-btn:hover {
-      transform: translateY(-2px);
-    }
-    .youtube-btn {
-      background: #ffebee;
-      color: #c4302b;
-      border-color: #ffcdd2;
-    }
-    .youtube-btn:hover {
-      background: #c4302b;
-      color: white;
-      border-color: #c4302b;
-    }
-    .kaggle-btn {
-      background: #f5f0f7;
-      color: #20beff;
-      border-color: #c9e9ff;
-    }
-    .kaggle-btn:hover {
-      background: #20beff;
-      color: white;
-    }
-    .live-btn {
-      background: #e6f4ea;
-      color: #2e7d32;
-      border-color: #c8e6c9;
-    }
-    .live-btn:hover {
-      background: #2e7d32;
-      color: white;
-    }
+    .youtube-btn { background: #ffebee; color: #c4302b; border-color: #ffcdd2; }
+    .youtube-btn:hover { background: #c4302b; color: white; }
+    .kaggle-btn { background: #f5f0f7; color: #20beff; border-color: #c9e9ff; }
+    .kaggle-btn:hover { background: #20beff; color: white; }
+    .live-btn { background: #e6f4ea; color: #2e7d32; border-color: #c8e6c9; }
+    .live-btn:hover { background: #2e7d32; color: white; }
 
-    /* certifications */
     .certs-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -438,10 +396,7 @@
       border: 1px solid #e2ecf5;
       transition: 0.2s;
     }
-    .cert-card:hover {
-      border-color: var(--yellow);
-      background: #fffef7;
-    }
+    .cert-card:hover { border-color: var(--yellow); background: #fffef7; }
     .cert-emoji {
       font-size: 2rem;
       background: #fdf7e6;
@@ -452,22 +407,9 @@
       justify-content: center;
       border-radius: 30px;
     }
-    .cert-info h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--deep-blue);
-    }
-    .cert-issuer {
-      font-size: 0.75rem;
-      color: var(--yellow-dark);
-      margin-top: 3px;
-    }
-    .cert-date {
-      font-size: 0.7rem;
-      color: #7892af;
-    }
-
-    /* contact */
+    .cert-info h4 { font-size: 0.95rem; font-weight: 600; color: var(--deep-blue); }
+    .cert-issuer { font-size: 0.75rem; color: var(--yellow-dark); }
+    
     .contact-box {
       background: var(--white);
       max-width: 700px;
@@ -476,11 +418,6 @@
       border-radius: 32px;
       padding: 40px 30px;
       border: 1px solid #d9e8f2;
-    }
-    .contact-desc {
-      color: var(--gray);
-      margin-bottom: 32px;
-      line-height: 1.6;
     }
     .contact-links {
       display: flex;
@@ -499,12 +436,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      transition: 0.2s;
     }
-    .contact-link:hover {
-      background: var(--yellow);
-      color: #0f2f4f;
-    }
+    .contact-link:hover { background: var(--yellow); }
     .contact-email {
       font-size: 1.2rem;
       font-weight: 500;
@@ -513,10 +446,6 @@
       border-bottom: 2px solid var(--yellow);
       padding-bottom: 4px;
     }
-    .contact-email:hover {
-      color: var(--yellow-dark);
-    }
-
     footer {
       background: var(--deep-blue);
       text-align: center;
@@ -525,19 +454,14 @@
       font-size: 0.8rem;
       margin-top: 20px;
     }
-    footer span {
-      color: var(--yellow);
-    }
-
+    footer span { color: var(--yellow); }
+    
     @media (max-width: 700px) {
       .hero-grid { flex-direction: column-reverse; text-align: center; }
       .hero-text h1 { font-size: 2.2rem; }
       .btn-group { justify-content: center; }
-      .nav-container { flex-direction: column; }
-      .nav-links { gap: 20px; }
-      .stats-grid { margin-top: 10px; }
-      .section-header h2 { font-size: 1.9rem; }
       .projects-grid { grid-template-columns: 1fr; }
+      .card-gallery { height: 180px; }
     }
   </style>
 </head>
@@ -556,7 +480,7 @@
   </div>
 </nav>
 
-<!-- HERO - simple and friendly -->
+<!-- HERO section -->
 <section id="home" class="hero">
   <div class="container">
     <div class="hero-grid">
@@ -564,7 +488,7 @@
         <div class="hero-badge">AVAILABLE FOR INTERNSHIP</div>
         <h1>Welcome to Radhiah's<br><span>Portfolio</span></h1>
         <p class="hero-desc">
-          I’m Nurul Aini Radhiah, a third-year Computer Science (Software Technology) student at Universiti Kebangsaan Malaysia (UKM). This ePortfolio highlights some of the projects, technical skills and experiences I’ve gained throughout my journey in tech and software development.
+          I'm Nurul Aini Radhiah, a third-year Computer Science (Software Technology) student at Universiti Kebangsaan Malaysia (UKM). This ePortfolio highlights some of the projects, technical skills and experiences I've gained throughout my journey in tech and software development.
         </p>
         <div class="btn-group">
           <a href="#projects" class="btn-primary">See my work</a>
@@ -572,10 +496,8 @@
         </div>
       </div>
       <div class="hero-photo">
-        <div class="photo-placeholder">
-          <div class="icon">🌸</div>
-          <p>Your photo here<br><code>images/profile.jpg</code></p>
-        </div>
+  <img src="images/profile.jpg" alt="Nurul Aini Radhiah" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+</div>
       </div>
     </div>
   </div>
@@ -591,15 +513,9 @@
     </div>
     <div class="about-flex">
       <div class="about-text">
-        <p>
-         I'm a third-year Computer Science (Software Technology) student at Universiti Kebangsaan Malaysia (UKM) with a strong interest in software development, mobile applications and database systems. Before pursuing my degree, I completed my Foundation in Science at UiTM Dengkil and previously studied Pure Science at Sekolah Menengah Sains Dungun (SEMESDI).
-        </p>
-        <p>
-Throughout my degree journey, I’ve worked on various academic and personal projects involving Android development, real-time systems, database integration and web technologies while continuously exploring new tools and improving my technical skills.
-        </p>
-        <p>
-Beyond academics, I’m also a Yayasan Telekom Malaysia YTM Future Leaders Scholar and someone who enjoys learning beyond the classroom. I also spent part of my semester break managing a small business, which helped me develop communication, teamwork and customer service skills beyond the tech field.
-        </p>
+        <p>I'm a third-year Computer Science (Software Technology) student at Universiti Kebangsaan Malaysia (UKM) with a strong interest in software development, mobile applications and database systems. Before pursuing my degree, I completed my Foundation in Science at UiTM Dengkil and previously studied Pure Science at Sekolah Menengah Sains Dungun (SEMESDI).</p>
+        <p>Throughout my degree journey, I've worked on various academic and personal projects involving Android development, real-time systems, database integration and web technologies while continuously exploring new tools and improving my technical skills.</p>
+        <p>Beyond academics, I'm also a Yayasan Telekom Malaysia YTM Future Leaders Scholar and someone who enjoys learning beyond the classroom. I also spent part of my semester break managing a small business, which helped me develop communication, teamwork and customer service skills beyond the tech field.</p>
       </div>
       <div class="stats-grid">
         <div class="stat-item"><span class="stat-number">3.77/4.00</span><span class="stat-label">CGPA · Distinction</span></div>
@@ -611,138 +527,15 @@ Beyond academics, I’m also a Yayasan Telekom Malaysia YTM Future Leaders Schol
   </div>
 </section>
 
-<!-- PROJECTS SECTION -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="section-header">
-      <div class="section-label">my projects</div>
+      <div class="section-label">DEVELOPMENT</div>
       <h2>Featured <span>Work</span></h2>
       <div class="simple-divider"></div>
     </div>
-    <div class="projects-grid">
-      
-      <!-- 1. Final Year Project: Parcel Alert -->
-      <div class="project-card">
-        <div class="project-image-placeholder">
-          <img src="https://placehold.co/600x400/eef3fc/2c5a7a?text=Parcel+Alert+Notification" alt="Parcel Alert App" class="project-img">
-        </div>
-        <div class="project-tag">📦 Final Year Project</div>
-        <div class="project-title">Parcel Alert — Smart Notification System</div>
-        <div class="project-sub">Real-time parcel tracking & alerts</div>
-        <p class="project-desc">
-          Developed a real-time parcel notification system that alerts users the moment their delivery arrives, addressing the common problem of missed or uncollected parcels.
-        </p>
-        <div class="tech-stack">
-          <span class="tech">Real-Time Data</span><span class="tech">Notification Systems</span><span class="tech">Software Development</span><span class="tech">Kotlin</span>
-        </div>
-      </div>
-
-        <!-- 2. Mobile Development: HerFlow -->
-      <div class="project-card">
-        <div class="project-image-placeholder">
-          <img src="https://placehold.co/600x400/eef3fc/2c5a7a?text=HerFlow+Kotlin+App" alt="HerFlow Android App" class="project-img">
-        </div>
-        <div class="project-tag">📱 Mobile Development</div>
-        <div class="project-title">HerFlow — Menstrual Health Tracker</div>
-        <div class="project-sub">Android app with interactive calendar</div>
-        <p class="project-desc">
-          Built an Android app using Kotlin that helps women track their menstrual cycle through an interactive calendar, enabling users to log, monitor, and plan around their cycle with ease.
-        </p>
-        <div class="tech-stack">
-          <span class="tech">Android Studio</span><span class="tech">Kotlin</span><span class="tech">Mobile UI Design</span><span class="tech">Firebase</span>
-        </div>
-      </div>
-
-      <!-- 3. Web Development: Slingcraft Website -->
-      <div class="project-card">
-        <div class="project-image-placeholder">
-          <img src="https://placehold.co/600x400/eef3fc/2c5a7a?text=Slingcraft+E-commerce" alt="Slingcraft Website" class="project-img">
-        </div>
-        <div class="project-tag">🌐 Web Development</div>
-        <div class="project-title">Slingcraft Website</div>
-        <div class="project-sub">Front-end e-commerce catalogue</div>
-        <p class="project-desc">
-          Created a front-end e-commerce website for a men's sling bag brand using HTML and CSS, featuring a clean product catalogue layout with a focus on responsive and user-friendly design.
-        </p>
-        <div class="tech-stack">
-          <span class="tech">HTML</span><span class="tech">CSS</span><span class="tech">Responsive Design</span><span class="tech">Front-End Development</span>
-        </div>
-        <div class="project-buttons">
-          <a href="#" class="project-btn live-btn" target="_blank">🌍 Live Preview</a>
-        </div>
-      </div>
-
-       <!-- 4. Artificial Intelligence: Vehicle Classification Model -->
-      <div class="project-card">
-        <div class="project-image-placeholder">
-          <img src="https://placehold.co/600x400/eef3fc/2c5a7a?text=Vehicle+Classification+Model" alt="Vehicle Classification CNN" class="project-img">
-        </div>
-        <div class="project-tag">🤖 Artificial Intelligence</div>
-        <div class="project-title">Vehicle Classification Model</div>
-        <div class="project-sub">CNN classifier with 98.12% accuracy</div>
-        <p class="project-desc">
-          Built a CNN-based vehicle classifier using EfficientNetB0 to categorise vehicles into five classes, achieving 98.12% accuracy. Involved data preprocessing, augmentation, and model fine-tuning across the full deep learning pipeline.
-        </p>
-        <div class="tech-stack">
-          <span class="tech">Python</span><span class="tech">CNN</span><span class="tech">EfficientNetB0</span><span class="tech">Deep Learning</span><span class="tech">Computer Vision</span>
-        </div>
-        <div class="project-buttons">
-          <a href="https://www.kaggle.com/code/nurulainiradhiah/ai-mini-project-4-vehicle" class="project-btn kaggle-btn" target="_blank">📊 View on Kaggle</a>
-          <a href="https://www.kaggle.com/code/ainimardhiahh/interface/notebook" class="project-btn kaggle-btn" target="_blank">📊 View Interface on Kaggle</a>
-        </div>
-      </div>
-
-      <!-- 5. Database: Slingcraft Store Management -->
-      <div class="project-card">
-        <div class="project-image-placeholder">
-          <img src="https://placehold.co/600x400/eef3fc/2c5a7a?text=Slingcraft+DBMS" alt="Slingcraft Database System" class="project-img">
-        </div>
-        <div class="project-tag">🗄️ Database</div>
-        <div class="project-title">Slingcraft — Store Management System</div>
-        <div class="project-sub">Complete inventory & order management</div>
-        <p class="project-desc">
-          Built a database-integrated system to manage a men's sling bag store, covering product catalogues, customer and staff records, order processing, and automated invoice generation.
-        </p>
-        <div class="tech-stack">
-          <span class="tech">DBMS</span><span class="tech">Visual Studio</span><span class="tech">Database Design</span><span class="tech">System Integration</span>
-        </div>
-      </div>
-
-      <!-- 6. OOP / OOSE: CourtSite -->
-      <div class="project-card">
-        <div class="project-image-placeholder">
-          <img src="https://placehold.co/600x400/eef3fc/2c5a7a?text=CourtSite+Booking+System" alt="CourtSite Java GUI" class="project-img">
-        </div>
-        <div class="project-tag">🏸Object-Oriented Software Engineering</div>
-        <div class="project-title">CourtSite — Sports Booking System</div>
-        <div class="project-sub">Java-based court & trainer reservation</div>
-        <p class="project-desc">
-          Developed a Java-based court booking system with a GUI that supports court search, reservations, trainer selection, and equipment rental — for both users and facility owners.
-        </p>
-        <div class="tech-stack">
-          <span class="tech">Java</span><span class="tech">GUI Design</span><span class="tech">Object-Oriented Programming</span>
-        </div>
-      </div>
-
-      <!-- 7. Human-Computer Interaction: LadyBloo -->
-      <div class="project-card">
-        <div class="project-image-placeholder">
-          <img src="https://placehold.co/600x400/eef3fc/2c5a7a?text=LadyBloo+App+Mockup" alt="LadyBloo App Design" class="project-img">
-        </div>
-        <div class="project-tag">🎨 Human-Computer Interaction</div>
-        <div class="project-title">LadyBloo — Period Tracker App</div>
-        <div class="project-sub">Figma prototype with mood tracking & fasting mode</div>
-        <p class="project-desc">
-          Designed a mobile period tracker app in Figma featuring mood and symptom tracking, an Istihadah tracker, fasting mode, menstrual care tips, and an in-app chat. Conducted heuristic analysis and user surveys to validate usability from low-fi to high-fi prototype.
-        </p>
-        <div class="tech-stack">
-          <span class="tech">Figma</span><span class="tech">UI/UX Design</span><span class="tech">Prototyping</span><span class="tech">Heuristic Evaluation</span><span class="tech">User Research</span>
-        </div>
-        <div class="project-buttons">
-          <a href="https://www.youtube.com/watch?feature=shared&v=jik9y9jwD10" class="project-btn youtube-btn" target="_blank">▶ Watch Demo (YouTube)</a>
-        </div>
-      </div>
-    </div>
+    <div class="projects-grid" id="projectsGrid"></div>
   </div>
 </section>
 
@@ -754,29 +547,26 @@ Beyond academics, I’m also a Yayasan Telekom Malaysia YTM Future Leaders Schol
       <h2>Certifi<span>cations</span></h2>
       <div class="simple-divider"></div>
     </div>
-    <div class="certs-grid">
-      <div class="cert-card"><div class="cert-emoji">🎩</div><div class="cert-info"><h4>Red Hat System Administration I</h4><div class="cert-issuer">Red Hat</div><div class="cert-date">Apr 2026</div></div></div>
-      <div class="cert-card"><div class="cert-emoji">🛡️</div><div class="cert-info"><h4>Intro to Cybersecurity</h4><div class="cert-issuer">Cisco Networking Academy</div><div class="cert-date">May 2026</div></div></div>
-      <div class="cert-card"><div class="cert-emoji">💻</div><div class="cert-info"><h4>ICDL Profile Certificate</h4><div class="cert-issuer">ICDL Asia</div><div class="cert-date">Mar 2025</div></div></div>
-      <div class="cert-card"><div class="cert-emoji">📊</div><div class="cert-info"><h4>ICDL Spreadsheets</h4><div class="cert-issuer">ICDL Asia</div><div class="cert-date">Jan 2025</div></div></div>
-      <div class="cert-card"><div class="cert-emoji">📄</div><div class="cert-info"><h4>ICDL Documents</h4><div class="cert-issuer">ICDL Asia</div><div class="cert-date">Jan 2025</div></div></div>
-      <div class="cert-card"><div class="cert-emoji">👩‍💻</div><div class="cert-info"><h4>Top Coders Malaysia Pre-Competition Workshop</h4><div class="cert-issuer">Data Science Association</div><div class="cert-date">Jan 2025</div></div></div>
-      <div class="cert-card"><div class="cert-emoji">🌟</div><div class="cert-info"><h4>YTM Scholars: Digital Leaders Tomorrow</h4><div class="cert-issuer">LHI Consulting</div><div class="cert-date">Dec 2023</div></div></div>
-    </div>
+   <div class="certs-grid">
+  <div class="cert-card"><div class="cert-info"><h4>Red Hat System Administration I</h4><div class="cert-issuer">Red Hat</div><div class="cert-date">Apr 2026</div></div></div>
+  <div class="cert-card"><div class="cert-info"><h4>Intro to Cybersecurity</h4><div class="cert-issuer">Cisco Networking Academy</div><div class="cert-date">May 2026</div></div></div>
+  <div class="cert-card"><div class="cert-info"><h4>ICDL Profile Certificate</h4><div class="cert-issuer">ICDL Asia</div><div class="cert-date">Mar 2025</div></div></div>
+  <div class="cert-card"><div class="cert-info"><h4>ICDL Spreadsheets</h4><div class="cert-issuer">ICDL Asia</div><div class="cert-date">Jan 2025</div></div></div>
+  <div class="cert-card"><div class="cert-info"><h4>ICDL Documents</h4><div class="cert-issuer">ICDL Asia</div><div class="cert-date">Jan 2025</div></div></div>
+  <div class="cert-card"><div class="cert-info"><h4>Top Coders Malaysia Pre-Competition Workshop</h4><div class="cert-issuer">Data Science Association</div><div class="cert-date">Jan 2025</div></div></div>
+  <div class="cert-card"><div class="cert-info"><h4>YTM Scholars: Digital Leaders Tomorrow</h4><div class="cert-issuer">LHI Consulting</div><div class="cert-date">Dec 2023</div></div></div>
+</div>
   </div>
 </section>
 
-<!-- CONTACT (clean, minimal) -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="contact-box">
       <div class="section-label" style="background: transparent; padding-left:0;">📫 let's chat</div>
       <h2 style="margin-bottom: 8px;">Get In <span>Touch</span></h2>
       <div class="simple-divider" style="margin-bottom: 24px;"></div>
-      <p class="contact-desc">
-        I'm actively looking for internship opportunities in software development, mobile apps, or backend systems. 
-        Feel free to reach out — I'd love to collaborate or just connect!
-      </p>
+      <p class="contact-desc">I'm actively looking for internship opportunities in software development, mobile apps, or backend systems. Feel free to reach out — I'd love to collaborate or just connect!</p>
       <div class="contact-links">
         <a href="mailto:radhiahhanafiwork@gmail.com" class="contact-link">✉️ Email</a>
         <a href="https://www.linkedin.com/in/radhiah-hanafi-146029380" target="_blank" class="contact-link">💼 LinkedIn</a>
@@ -786,10 +576,150 @@ Beyond academics, I’m also a Yayasan Telekom Malaysia YTM Future Leaders Schol
     </div>
   </div>
 </section>
+<footer><p>Designed with 💛 by <span>Nurul Aini Radhiah</span> · 2026</p></footer>
 
-<footer>
-  <p>Designed with 💛 by <span>Nurul Aini Radhiah</span> · 2026</p>
-</footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const projectsData = [
+    {
+      tag: "📦 Final Year Project",
+      title: "Parcel Alert — Smart Notification System",
+      subtitle: "Real-time parcel tracking & alerts",
+      desc: "Developed a real-time parcel notification system that alerts users the moment their delivery arrives, addressing missed or uncollected parcels.",
+      tech: ["Real-Time Data", "Notification Systems", "Kotlin", "Firebase"],
+      images: ["images/parcelalert1.png", "images/parcelalert2.png", "images/parcelalert3.png"],
+      links: []
+    },
+    {
+      tag: "📱 Mobile Development",
+      title: "HerFlow — Menstrual Health Tracker",
+      subtitle: "Android app with interactive calendar",
+      desc: "Built an Android app using Kotlin that helps women track their menstrual cycle through an interactive calendar, enabling users to log, monitor, and plan.",
+      tech: ["Android Studio", "Kotlin", "Mobile UI", "Firebase"],
+      images: ["images/herflow1.png", "images/herflow2.png", "images/herflow3.png"],
+      links: []
+    },
+    {
+      tag: "🌐 Web Development",
+      title: "Slingcraft Website",
+      subtitle: "Front-end e-commerce catalogue",
+      desc: "Created a front-end e-commerce website for a men's sling bag brand using HTML and CSS, featuring responsive design.",
+      tech: ["HTML", "CSS", "Responsive Design"],
+      images: ["images/SCweb1.png", "images/SCweb2.png"],
+      links: [{ text: "🌍 Live Preview", url: "#", class: "live-btn" }]
+    },
+    {
+      tag: "🤖 Artificial Intelligence",
+      title: "Vehicle Classification Model",
+      subtitle: "CNN classifier with 98.12% accuracy",
+      desc: "Built a CNN-based vehicle classifier using EfficientNetB0 to categorise vehicles into five classes. Full deep learning pipeline.",
+      tech: ["Python", "CNN", "EfficientNetB0", "Deep Learning"],
+      images: ["images/AI1.jpg"],
+      links: [
+        { text: "📊 View on Kaggle", url: "https://www.kaggle.com/code/nurulainiradhiah/ai-mini-project-4-vehicle", class: "kaggle-btn" },
+        { text: "📊 Interface", url: "https://www.kaggle.com/code/ainimardhiahh/interface/notebook", class: "kaggle-btn" }
+      ]
+    },
+    {
+      tag: "🗄️ Database",
+      title: "Slingcraft — Store Management",
+      subtitle: "Inventory & order management",
+      desc: "Database-integrated system to manage sling bag store: product catalogues, customer records, order processing and invoices.",
+      tech: ["DBMS", "Visual Studio", "Database Design"],
+      images: ["images/slingcraft1.png", "images/slingcraft2.png", "images/slingcraft3.png"],
+      links: []
+    },
+    {
+      tag: "🏸 OOSE",
+      title: "CourtSite — Sports Booking",
+      subtitle: "Java-based court & trainer reservation",
+      desc: "Java booking system with GUI that supports court search, reservations, trainer selection, and equipment rental.",
+      tech: ["Java", "GUI Design", "OOP"],
+      images: ["images/courtsite1.png"],
+      links: []
+    },
+    {
+      tag: "🎨 Human-Computer Interaction",
+      title: "LadyBloo — Period Tracker",
+      subtitle: "Figma prototype with mood & fasting mode",
+      desc: "Designed a mobile period tracker app in Figma featuring mood tracking, Istihadah tracker, fasting mode and usability testing.",
+      tech: ["Figma", "UI/UX", "Prototyping", "Heuristic Evaluation"],
+      images: ["images/HCI1.png"],
+      links: [{ text: "▶ Watch Demo (YouTube)", url: "https://www.youtube.com/watch?feature=shared&v=jik9y9jwD10", class: "youtube-btn" }]
+    }
+  ];
 
+  function renderCompactCards() {
+    const grid = document.getElementById('projectsGrid');
+    if (!grid) return;
+    let html = '';
+    projectsData.forEach((proj, idx) => {
+      const swiperId = `swiper-${idx}`;
+      const prevId = `prev-${idx}`;
+      const nextId = `next-${idx}`;
+      const fractionId = `frac-${idx}`;
+      
+      let slidesHtml = '';
+      proj.images.forEach((src, i) => {
+        slidesHtml += `<div class="swiper-slide"><img src="${src}" alt="${proj.title} view ${i+1}" loading="lazy" onerror="this.src='https://placehold.co/600x400/eef3fc/2c5a7a?text=Image+Not+Found'"></div>`;
+      });
+      
+      let buttonsHtml = '';
+      if (proj.links.length) {
+        buttonsHtml = `<div class="project-buttons">`;
+        proj.links.forEach(link => {
+          buttonsHtml += `<a href="${link.url}" class="project-btn ${link.class}" target="_blank">${link.text}</a>`;
+        });
+        buttonsHtml += `</div>`;
+      }
+      
+      html += `
+        <div class="project-card">
+          <div class="card-gallery">
+            <div class="swiper ${swiperId}" id="${swiperId}">
+              <div class="swiper-wrapper">
+                ${slidesHtml}
+              </div>
+            </div>
+            <div class="gallery-nav">
+              <div class="nav-btn" id="${prevId}">◀</div>
+              <div class="swiper-pagination-fraction-custom" id="${fractionId}"></div>
+              <div class="nav-btn" id="${nextId}">▶</div>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tag">${proj.tag}</div>
+            <div class="project-title">${proj.title}</div>
+            <div class="project-sub">${proj.subtitle}</div>
+            <p class="project-desc">${proj.desc}</p>
+            <div class="tech-stack">
+              ${proj.tech.map(t => `<span class="tech">${t}</span>`).join('')}
+            </div>
+            ${buttonsHtml}
+          </div>
+        </div>
+      `;
+    });
+    grid.innerHTML = html;
+    
+    projectsData.forEach((_, idx) => {
+      const container = document.querySelector(`#swiper-${idx}`);
+      if (!container) return;
+      const prevEl = document.getElementById(`prev-${idx}`);
+      const nextEl = document.getElementById(`next-${idx}`);
+      const fractionEl = document.getElementById(`frac-${idx}`);
+      new Swiper(container, {
+        slidesPerView: 1,
+        loop: true,
+        grabCursor: true,
+        navigation: { nextEl: nextEl, prevEl: prevEl },
+        pagination: { el: fractionEl, type: 'fraction' },
+        spaceBetween: 0,
+      });
+    });
+  }
+  
+  renderCompactCards();
+</script>
 </body>
 </html>
